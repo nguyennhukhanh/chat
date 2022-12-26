@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 
     if (new_socket < 0)
     {
-        perror("accept failed");
+        perror("Chap nhan ket noi tu socket hien dang loi!");
         return 1;
     }
 
@@ -88,7 +88,7 @@ void *connection_handler(void *p_connection)
 
     if (pthread_create(&receiving_thread, NULL, receiver_handler, (void *)p_connection) > 0)
     {
-        perror("could not create receving thread");
+        perror("Nguoi nhan hien nhan khong duoc!");
         return 0;
     }
 
